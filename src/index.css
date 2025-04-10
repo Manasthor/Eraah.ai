@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Logik-ExtendedLight';
+    /* Replace with your font name */
+    src: url('/fonts/Logik-ExtendedLight.ttf') format('truetype');
+    /* or .woff/.woff2 */
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Logik-ExtendedLight', sans-serif;
+}
