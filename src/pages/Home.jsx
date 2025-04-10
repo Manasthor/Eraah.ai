@@ -7,18 +7,33 @@ import Image3 from '../assets/Image3.jpg';
 import Image4 from '../assets/Image4.jpg';
 import Image5 from '../assets/Image5.jpg';
 import Image6 from '../assets/Image6.png';
+import bg from '../assets/bg.png';
 
 export default function Home() {
   return (
     <div className=" text-black">
 
       {/* Hero Section */}
-      <section className="h-[90vh] flex items-center justify-center px-6 bg-gradient-to-b from-white via-white to-neutral-400">
+      <section className="relative h-[100vh] flex items-center justify-center px-6 overflow-hidden">
+        {/* Background image + gradient overlay */}
+        <div
+          className="absolute inset-0 bg-cover bg-center z-0"
+          style={{ 
+            backgroundImage: `url(${bg})`, 
+            backgroundSize: '60%',   // Or '100% 100%', or 'auto 90vh'
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center'
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-white/70 to-neutral-400/90"></div>
+        </div>
+
+        {/* Hero Content */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl text-center"
+          className="max-w-3xl text-center z-10"
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-4 text-primary py-5">
             Welcome to Eraah
@@ -26,17 +41,12 @@ export default function Home() {
           <p className="text-lg md:text-xl text-black mb-6 font-bold">
             We help you showcase the impact you create to your donors in just a few clicks, reduces costs & boosts your marketing.
           </p>
-          {/* <Link
-            to="/services"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-amber-300 font-semibold rounded-lg hover:bg-opacity-80 transition"
-          >
-            Explore Services <ArrowRight size={20} />
-          </Link> */}
         </motion.div>
       </section>
 
+
       {/* What AI Can Do Section */}
-      <section className="px-6 py-16 text-center bg-gradient-to-b from-neutral-400 via-neutral-700 to-neutral-800 text-black">
+      <section className="px-6 py-16 text-center bg-gradient-to-b from-neutral-400/90 via-neutral-700 to-neutral-800 text-black">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
