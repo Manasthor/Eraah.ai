@@ -24,8 +24,7 @@ export default function Home() {
             Welcome to Eraah
           </h1>
           <p className="text-lg md:text-xl text-black mb-6 font-bold">
-            We help you showcase the impact you create to your donors in just a<br />
-            few clicks, reduces costs & boosts your marketing.
+            We help you showcase the impact you create to your donors in just a few clicks, reduces costs & boosts your marketing.
           </p>
           {/* <Link
             to="/services"
